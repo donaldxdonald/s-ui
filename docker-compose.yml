@@ -12,11 +12,9 @@ services:
     ports:
       - "2095:2095"
       - "2096:2096"
-    networks:
-      - s-ui
     entrypoint: "./entrypoint.sh"
-
+    networks:
+      - dokploy-network
 networks:
-  s-ui:
-    driver: bridge
-  
+  dokploy-network:
+    external: true
